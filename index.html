@@ -12,117 +12,213 @@
     
     <style>
         html {
-            font-size: 23px !important;
+            font-size: 16px;
             -webkit-text-size-adjust: 100%;
         }
 
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 12px;
+            padding: 15px;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
         }
 
-        .container { max-width: 100%; padding: 0 10px; }
+        .container { 
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
         .main-card {
             background: white;
-            border-radius: 26px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            padding: 36px 26px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 25px 20px;
         }
 
-        h1 { font-size: 2.1rem !important; font-weight: 800; margin-bottom: 10px; }
-        .subtitle { font-size: 1.15rem !important; color: #555; }
-        .form-label { font-size: 1.35rem !important; font-weight: 700; margin-bottom: 14px; }
+        h1 { 
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle { 
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .form-label { 
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
 
         .form-control {
-            font-size: 1.5rem !important;
-            padding: 22px 20px !important;
-            min-height: 76px !important;
-            border-radius: 18px !important;
-            border: 3px solid #ccc !important;
-            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            font-weight: 500;
         }
 
         .btn {
-            font-size: 1.5rem !important;
-            min-height: 76px !important;
-            border-radius: 18px !important;
-            font-weight: 700;
-            padding: 22px 28px !important;
+            font-size: 1.1rem;
+            height: 50px;
+            border-radius: 10px;
+            font-weight: 600;
+            padding: 12px 20px;
         }
 
         .btn-primary, .btn-success { width: 100%; }
 
         .table {
             width: 100%;
-            table-layout: fixed;
-            margin-top: 24px;
-            font-size: 1.25rem !important;
+            margin-top: 20px;
+            font-size: 1rem;
         }
 
         .table thead th {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px 12px !important;
-            font-weight: 700;
-            font-size: 1.3rem !important;
+            padding: 12px 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .table tbody td {
+            padding: 10px 8px;
+            vertical-align: middle;
         }
 
         .player-number {
-            width: 62px; height: 62px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-size: 1.5rem !important;
-            font-weight: 800;
+            font-size: 1rem;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
 
-        @media (max-width: 768px) {
-            .table th:nth-child(1), .table td:nth-child(1) { width: 76px; }
-            .table th:nth-child(2), .table td:nth-child(2) { width: 43%; }
-            .table th:nth-child(3), .table td:nth-child(3) { width: 140px; }
-            .table th:nth-child(4), .table td:nth-child(4) { width: auto; }
-
-            .table .form-control {
-                min-height: 78px !important;
-                border-radius: 16px !important;
-                font-size: 1.55rem !important;
-                font-weight: 700 !important;
-                padding: 22px 18px !important;
-                text-align: center;
-            }
-
-            .table td:nth-child(2) .form-control {
-                text-align: left;
-                padding-left: 26px !important;
-            }
-        }
-
         .result-text {
             text-align: center;
-            vertical-align: middle;
-            font-size: 1.9rem !important;
-            font-weight: 900 !important;
-            color: #000000;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #000;
         }
 
         .result-text.result-negative {
-            color: #dc3545 !important;
-            text-align: center;
-            vertical-align: middle;
-            font-size: 1.9rem !important;
-            font-weight: 900 !important;
+            color: #dc3545;
         }
 
-        @media (max-width: 380px) {
-            html { font-size: 25px !important; }
-            .table .form-control { min-height: 82px !important; }
+        small.text-muted {
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            html { font-size: 15px; }
+            
+            body { padding: 10px; }
+            
+            .main-card { 
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+            
+            h1 { font-size: 1.5rem; }
+            
+            .subtitle { font-size: 0.9rem; }
+            
+            .form-control {
+                font-size: 1rem;
+                padding: 10px 12px;
+                height: 45px;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                height: 45px;
+                padding: 10px 15px;
+            }
+            
+            .table {
+                font-size: 0.9rem;
+            }
+            
+            .table thead th {
+                padding: 10px 6px;
+                font-size: 0.9rem;
+            }
+            
+            .table tbody td {
+                padding: 8px 4px;
+            }
+            
+            .table .form-control {
+                font-size: 0.95rem;
+                padding: 8px 10px;
+                height: 42px;
+            }
+            
+            .player-number {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .result-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html { font-size: 14px; }
+            
+            h1 { font-size: 1.3rem; }
+            
+            .table th:nth-child(1), 
+            .table td:nth-child(1) { 
+                width: 50px;
+            }
+            
+            .table th:nth-child(2), 
+            .table td:nth-child(2) { 
+                width: 35%;
+            }
+            
+            .table th:nth-child(3), 
+            .table td:nth-child(3) { 
+                width: 25%;
+            }
+            
+            .table th:nth-child(4), 
+            .table td:nth-child(4) { 
+                width: auto;
+            }
+            
+            .table .form-control {
+                font-size: 0.9rem;
+                height: 40px;
+            }
+        }
+
+        /* Desktop Optimization */
+        @media (min-width: 1200px) {
+            .container { max-width: 1000px; }
+            
+            h1 { font-size: 2rem; }
+            
+            .form-control { font-size: 1.15rem; }
+            
+            .btn { font-size: 1.15rem; }
         }
 
         .input-group-text { display: none !important; }
@@ -137,7 +233,7 @@
     <div class="container">
         <div class="main-card">
             <div class="text-center mb-4">
-                <span style="font-size: 68px;">⛳</span>
+                <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">⛳</div>
                 <h1>Olympic Golf Game</h1>
                 <p class="subtitle">Head-to-Head Score Calculator</p>
             </div>
